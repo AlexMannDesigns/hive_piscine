@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:28:30 by amann             #+#    #+#             */
-/*   Updated: 2021/07/26 12:27:34 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/26 17:46:46 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ char	*ft_realloc(char *str, int size);
 char	*ft_malloc_exact(char *str, int len);
 void	ft_solve(char *str);
 int		ft_strlen(char *str);
-
+void	checksquare(char *str, int i, int line_length);
+void	ft_putnbr(int nb);
 #endif

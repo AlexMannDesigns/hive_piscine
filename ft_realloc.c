@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 11:35:45 by amann             #+#    #+#             */
-/*   Updated: 2021/07/26 11:45:08 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/26 16:49:49 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ char	*ft_realloc(char *str, int size)
 	int i;
 	char *temp;
 
-	temp = malloc(size);
+	if (!(temp = malloc(size)))
+		return (0);	
 	i = 0;
 	while (i < (size / 2))
 	{

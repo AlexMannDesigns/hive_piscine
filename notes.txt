@@ -1,0 +1,38 @@
+NOTES
+
+allowed functions: exit, open, close, write, read, malloc, free.
+
+Aim : find the biggest square, avoiding obstacles
+
+- the map will be passed as an argument, so the program must handle parameters:
+
+Number of lines, empty char, obstacle char, full char.
+eg: 9.ox
+
+- empty chars must be replaced by full chars to represent the biggest possible square.
+- If there is more than one solution, the topmost, then leftmost, will be chosen.
+
+Valid map:
+- all lines same length
+- smallest possible is 1x1 (at least one line of one box?)
+- At each end of line, there’s a line break.
+- first line will introduce the valid chars
+- IF THE MAP IS INVALID, PROGRAM DISPLAYS: map error\n THEN MOVES TO NEXT MAP
+
+
+- exec must be called 'bsq'
+- must pass norm
+- submission directory must have a file called 'author', containing logins: amann:ssulkuma
+- if no args are passed, program must read from stdin
+- Makefile needed
+
+int lines
+char empty
+char obstacle
+char full
+
+read("the file")
+lines = 9;
+empty = '.';
+
+"9.ox\n.....o....\n....etc"

@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:51:16 by amann             #+#    #+#             */
-/*   Updated: 2021/07/26 10:55:32 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/26 12:26:51 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,35 @@
 
 char	*ft_read(char *filename)
 {
-	char	*buf;
-	int		ret;
+	char	*str;
+	char	c;
 	int		fd;
+	int		i;
+	int		size;
+	int		len;
 	
-	buf = malloc(sizeof(char*));
+	str = malloc(sizeof(char*));
+	size = sizeof(char*);
+	//error handling for malloc needed
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
 		ft_putstr("Open failed\n");
 		return 0;
 	}
-	while ((ret = read(fd, buf, 10))) 
+	i = 0;
+	while (read(fd, &c, 1)) 
 	{	
-		buf[ret] = '\0';
-		return (buf);
+		str[i] = c;
+		i++;
+		if (i >= size)
+		{
+			size *= 2;
+			str = ft_realloc(str, size);
+		}
 	}
-	return (0);
+	str[i] = '\0';
+	len = ft_strlen(str);
+	str = ft_malloc_exact(str, len);
+	return (str);
 }

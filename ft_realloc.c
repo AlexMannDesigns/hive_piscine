@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bsq_header.h                                       :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 08:28:30 by amann             #+#    #+#             */
-/*   Updated: 2021/07/26 12:27:34 by amann            ###   ########.fr       */
+/*   Created: 2021/07/26 11:35:45 by amann             #+#    #+#             */
+/*   Updated: 2021/07/26 11:45:08 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BSQ_HEADER_H
-# define BSQ_HEADER_H
+#include "bsq_header.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
+char	*ft_realloc(char *str, int size)
+{
+	int i;
+	char *temp;
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-char	*ft_read(char *filename);
-char	*ft_realloc(char *str, int size);
-char	*ft_malloc_exact(char *str, int len);
-void	ft_solve(char *str);
-int		ft_strlen(char *str);
-
-#endif
+	temp = malloc(size);
+	i = 0;
+	while (i < (size / 2))
+	{
+		temp[i] = str[i];
+		i++;
+	}
+	free(str);
+	return (temp);
+}

@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
+/*   By: emende <emende@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 08:27:23 by amann             #+#    #+#             */
-/*   Updated: 2021/07/26 11:46:16 by amann            ###   ########.fr       */
+/*   Created: 2021/07/13 15:28:01 by emende            #+#    #+#             */
+/*   Updated: 2021/07/24 18:08:25 by emende           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "bsq_header.h"
-
-int		main(int argc, char **argv)
+int		ft_strlen(char *str)
 {
-	int		i;
-	char	*str;
-	
-	if (argc < 2)
-		return (0);
-	i = 1;
-	while (i < argc)
-	{
-		str = ft_read(argv[i]);
-		ft_solve(str);
-		ft_putchar('\n');
+	int i;
+
+	i = 0;
+	while (str[i])
 		i++;
-	}
-	//error handling - valid pattern
-	return (0);
+	return (i);
 }

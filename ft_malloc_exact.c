@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bsq_header.h                                       :+:      :+:    :+:   */
+/*   ft_malloc_exact.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 08:28:30 by amann             #+#    #+#             */
-/*   Updated: 2021/07/26 12:27:34 by amann            ###   ########.fr       */
+/*   Created: 2021/07/26 12:26:36 by amann             #+#    #+#             */
+/*   Updated: 2021/07/26 12:27:20 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BSQ_HEADER_H
-# define BSQ_HEADER_H
+#include "bsq_header.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
+char	*ft_malloc_exact(char *str, int len)
+{
+	char	*newstr;
+	int		i;
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-char	*ft_read(char *filename);
-char	*ft_realloc(char *str, int size);
-char	*ft_malloc_exact(char *str, int len);
-void	ft_solve(char *str);
-int		ft_strlen(char *str);
-
-#endif
+	newstr = malloc(sizeof(char*) * len);
+	i = 0;
+	while (str[i] != '\0')
+	{
+		newstr[i] = str[i];
+		i++;
+	}
+	newstr[i] = '\0';
+	free(str);
+	return (newstr);
+}

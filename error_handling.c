@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 07:30:34 by ssulkuma          #+#    #+#             */
-/*   Updated: 2021/07/27 16:24:15 by ssulkuma         ###   ########.fr       */
+/*   Updated: 2021/07/27 19:55:34 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,10 @@ int		check_valid_lines(char *map)
 	return (1);
 }
 
-int		check_valid_length(char *map)
+int		check_valid_length(char *map, int i)
 {
-	int i;
 	int counter;
 
-	i = 0;
-	while (map[i] != '\n')
-	{
-		i++;
-	}
-	i++;
 	while (map[i] != '\0')
 	{
 		counter = 0;
@@ -75,9 +68,17 @@ int		check_valid_length(char *map)
 
 int		check_valid_map(char *map)
 {
+	int i;
+
+	i = 0;
+	while (map[i] != '\n')
+	{
+		i++;
+	}
+	i++;
 	if (!check_valid_lines(map))
 		return (0);
-	if (!check_valid_length(map))
+	if (!check_valid_length(map, i))
 		return (0);
 	return (1);
 }

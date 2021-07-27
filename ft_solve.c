@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 09:30:18 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 16:57:32 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 18:05:43 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,56 +37,48 @@ void	ft_solve(char *str)
 
 void	checksquare(char *str, int i)
 {
-	int counter;
+	int c;
 	int j;
-	
-	counter = 1;
-	while (counter < g_lines)
+
+	c = 1;
+	while (c < g_lines)
 	{
-		if ((str[i + counter]) == g_empty)
-		{
-			if ((str[i + (g_line_length * counter)]) == g_empty)
-			{
-				if ((str[i + (g_line_length * counter) + counter]) == g_empty)
+		if ((str[i + c]) == g_empty)
+			if ((str[i + (g_line_length * c)]) == g_empty)
+				if ((str[i + (g_line_length * c) + c]) == g_empty)
 				{
-					j = counter - 1;
-					while (j > 0)	
+					j = c - 1;
+					while (j > 0)
 					{
-						if ((str[i + (g_line_length * j) + counter]) == g_empty)
-						{
-							if ((str[i + (g_line_length * counter) + j]) == g_empty)
-							{
+						if ((str[i + (g_line_length * j) + c]) == g_empty)
+							if ((str[i + (g_line_length * c) + j]) == g_empty)
 								j--;
-							}
 							else
-								return;
-						}
+								return ;
 						else
-							return;
+							return ;
 					}
 				}
 				else
-					return;
-			}
+					return ;
 			else
-				return;	
-		}
+				return ;
 		else
-			return;
-		update_best(counter, i);
-		counter++;
+			return ;
+		update_best(c, i);
+		c++;
 	}
-	return;
+	return ;
 }
 
-void	update_best(int counter, int i)
+void	update_best(int c, int i)
 {
-	if (!g_current_best || counter + 1 > g_current_best)
+	if (!g_current_best || c + 1 > g_current_best)
 	{
-		g_current_best = counter + 1;
+		g_current_best = c + 1;
 		g_solution_location = i;
 	}
-	return;
+	return ;
 }
 
 void	one_line(char *str, int i)
@@ -96,7 +88,7 @@ void	one_line(char *str, int i)
 		if (str[i] == g_empty)
 		{
 			update_best(0, i);
-			return;
+			return ;
 		}
 		else
 			i++;

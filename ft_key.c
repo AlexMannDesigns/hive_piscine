@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_key.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 08:53:00 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 15:37:37 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 16:23:13 by ssulkuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,28 +20,29 @@ int		number_of_lines(char *str)
 	int		line_number;
 
 	count_numerical = 0;
-    while (str[count_numerical] > 47 && str[count_numerical] < 58 && str[count_numerical + 3] != '\n')
-    {
-        count_numerical++;
-    }
-    if (!(lines = malloc((sizeof(char) * count_numerical) + 1)))
+	while (str[count_numerical] > 47 && str[count_numerical] < 58 &&
+	str[count_numerical + 3] != '\n')
+	{
+		count_numerical++;
+	}
+	if (!(lines = malloc((sizeof(char) * count_numerical) + 1)))
 		return (0);
-    i = 0;
-    while (i < count_numerical)
-    {
-        lines[i] = str[i];
-        i++;
-    }
+	i = 0;
+	while (i < count_numerical)
+	{
+		lines[i] = str[i];
+		i++;
+	}
 	lines[i] = '\0';
 	line_number = ft_atoi(lines);
-    free(lines);
+	free(lines);
 	return (line_number);
 }
 
 void	ft_key(char *str)
 {
 	int		i;
-	
+
 	g_lines = number_of_lines(str);
 	i = 0;
 	while (str[i] != '\n')

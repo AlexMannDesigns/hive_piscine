@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_solution.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 12:57:25 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 13:18:24 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 17:01:07 by ssulkuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_print_solution(char *str)
 {
 	int i;
 	int j;
-	
+
 	str[g_solution_location] = g_full;
 	i = 1;
 	while (i < g_current_best)
@@ -33,6 +33,11 @@ void	ft_print_solution(char *str)
 		}
 		i++;
 	}
+
+}
+
+int		print_two()
+{
 	i = 0;
 	while (str[i] != '\n')
 	{

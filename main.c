@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:27:23 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 16:18:54 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 16:27:45 by ssulkuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		main(int argc, char **argv)
 {
 	int		i;
 	char	*str;
-	
+
 	g_solution_location = 0;
 	if (argc < 2)
 		return (0);
@@ -35,6 +35,5 @@ int		main(int argc, char **argv)
 		}
 		i++;
 	}
-	//error handling - valid pattern
 	return (0);
 }

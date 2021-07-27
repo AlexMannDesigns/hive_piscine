@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_read.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:51:16 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 11:19:25 by ssulkuma         ###   ########.fr       */
+/*   Updated: 2021/07/27 15:32:08 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ char	*ft_read(char *filename)
 	if (fd == -1)
 	{
 		ft_putstr("Open failed\n");
-		return 0;
+		return (0);
 	}
 	i = 0;
 	while ((read_fd = read(fd, &c, 1)))
-	{	
+	{
 		str[i] = c;
 		i++;
 		if (i >= size)
@@ -49,6 +49,11 @@ char	*ft_read(char *filename)
 	}
 	str[i] = '\0';
 	len = ft_strlen(str);
+	if (len == 0)
+	{	
+		print_error();
+		return 0;
+	}
 	str = ft_malloc_exact(str, len);
 	return (str);
 }

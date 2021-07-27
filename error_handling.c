@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 07:30:34 by ssulkuma          #+#    #+#             */
-/*   Updated: 2021/07/27 13:19:32 by ssulkuma         ###   ########.fr       */
+/*   Updated: 2021/07/27 14:55:52 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,11 @@ int		check_valid_length(char *map)
 		counter = 0;
 		while (map[i] != '\n')
 		{
+			if (map[i] != g_empty && map[i] != g_obstacle)
+			{
+				print_error();
+				return (0);	
+			}
 			counter++;
 			i++;
 		}

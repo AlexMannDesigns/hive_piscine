@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_key.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 08:53:00 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 11:05:54 by ssulkuma         ###   ########.fr       */
+/*   Updated: 2021/07/27 15:37:37 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		number_of_lines(char *str)
 	int		line_number;
 
 	count_numerical = 0;
-    while (str[count_numerical] > 47 && str[count_numerical] < 58)
+    while (str[count_numerical] > 47 && str[count_numerical] < 58 && str[count_numerical + 3] != '\n')
     {
         count_numerical++;
     }

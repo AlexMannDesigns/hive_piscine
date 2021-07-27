@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:27:23 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 13:07:45 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 16:17:01 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,21 @@ int		main(int argc, char **argv)
 	
 	g_solution_location = 0;
 	if (argc < 2)
+		stdin;
+		read(0, )
 		return (0);
 	i = 1;
 	while (i < argc)
 	{
 		str = ft_read(argv[i]);
-		ft_key(str);
-		if (check_valid_map(str))
+		if (str)
 		{
-			ft_solve(str);
-			ft_print_solution(str);
+			ft_key(str);
+			if (check_valid_map(str))
+			{
+				ft_solve(str);
+				ft_print_solution(str);
+			}
 		}
 		i++;
 	}

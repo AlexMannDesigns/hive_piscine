@@ -37,15 +37,17 @@ empty = '.';
 
 "9.ox\n.....o....\n....etc"
 
-
 TO DO
-- 9+ lines (see ft_solve)
+read from stdin
+makefile
+one line map algorithms
 
+ERROR HANDLING
+empty files - done
+directories -
+no existent files
+empty character is numerical - done
 
-Algorithm idea
-
-counter = 2;
-int j;
 
 while (counter < number of lines)
 	i + counter

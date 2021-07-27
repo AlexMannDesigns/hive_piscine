@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 09:30:18 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 18:05:43 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 19:29:58 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 void	ft_solve(char *str)
 {
 	int		i;
+	int		c;
 
+	c = 1;
 	g_current_best = 0;
 	i = 0;
 	while (str[i] != '\n')
@@ -29,38 +31,31 @@ void	ft_solve(char *str)
 	{
 		if (str[i] == g_empty)
 		{
-			checksquare(str, i);
+			checksquare(str, i, c, j);
 		}
 		i++;
 	}
 }
 
-void	checksquare(char *str, int i)
+void	checksquare(char *s, int i, int c, int j)
 {
-	int c;
-	int j;
-
-	c = 1;
 	while (c < g_lines)
 	{
-		if ((str[i + c]) == g_empty)
-			if ((str[i + (g_line_length * c)]) == g_empty)
-				if ((str[i + (g_line_length * c) + c]) == g_empty)
+		if ((s[i + c]) == g_empty && (s[i + (g_line_length * c)]) == g_empty)
+			if ((s[i + (g_line_length * c) + c]) == g_empty)
+			{
+				j = c - 1;
+				while (j > 0)
 				{
-					j = c - 1;
-					while (j > 0)
-					{
-						if ((str[i + (g_line_length * j) + c]) == g_empty)
-							if ((str[i + (g_line_length * c) + j]) == g_empty)
-								j--;
-							else
-								return ;
+					if ((s[i + (g_line_length * j) + c]) == g_empty)
+						if ((s[i + (g_line_length * c) + j]) == g_empty)
+							j--;
 						else
 							return ;
-					}
+					else
+						return ;
 				}
-				else
-					return ;
+			}
 			else
 				return ;
 		else
@@ -68,7 +63,6 @@ void	checksquare(char *str, int i)
 		update_best(c, i);
 		c++;
 	}
-	return ;
 }
 
 void	update_best(int c, int i)

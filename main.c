@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:27:23 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 10:36:31 by ssulkuma         ###   ########.fr       */
+/*   Updated: 2021/07/27 13:07:45 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ int		main(int argc, char **argv)
 		if (check_valid_map(str))
 		{
 			ft_solve(str);
-			str[g_solution_location] = g_full;
-			ft_putstr(str);
-			ft_putchar('\n');
+			ft_print_solution(str);
 		}
 		i++;
 	}

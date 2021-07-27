@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 09:30:18 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 19:29:58 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 19:40:15 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ void	ft_solve(char *str)
 {
 	int		i;
 	int		c;
+	int		j;
 
 	c = 1;
+	j = 0;
 	g_current_best = 0;
 	i = 0;
 	while (str[i] != '\n')

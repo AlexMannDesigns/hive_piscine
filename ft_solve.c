@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 09:30:18 by amann             #+#    #+#             */
-/*   Updated: 2021/07/26 18:08:07 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 08:30:21 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	ft_solve(char *str)
 	empty = str[1];
 	obstacle = str[2];
 	full = str[3];
+
+	g_current_best = 0;
 	
 	i = 0;
 	while (str[i] != '\n')
@@ -38,52 +40,74 @@ void	ft_solve(char *str)
 		line_length++;
 		i++;
 	}
+	line_length++;
 	i = i - line_length;
-	
 	while (str[i] != '\0')
 	{
 		if (str[i] == empty)
 		{
-			checksquare(str, i, line_length);
-		}
-		else if (str[i] == obstacle)
-		{
-			ft_putstr("this is an obstacle!\n");	
+			checksquare(str, i, line_length, empty);
 		}
 		i++;
 	}
-	
 }
 
-void	checksquare(char *str, int i, int line_length)
+void	checksquare(char *str, int i, int line_length, char empty)
 {
-	int solution_start;
-	int size;
+	int counter;
+	int j;
 	
-	solution_start = i;
-	size = 1;
-	
-	while (size < 9)
+	counter = 1;
+	while (counter < 9)
 	{
-		if ((i + size) == empty)
+		if ((str[i + counter]) == empty)
 		{
-			i = i + line_length;
-			if (i == empty && (i + size) == empty)
+			if ((str[i + (line_length * counter)]) == empty)
 			{
-				size++;	
+				if ((str[i + (line_length * counter) + counter]) == empty)
+				{
+					j = counter - 1;
+					while (j > 0)	
+					{
+						if ((str[i + (line_length * j) + counter]) == empty)
+						{
+							if ((str[i + (line_length * counter) + j]) == empty)
+							{
+								j--;
+							}
+							else
+								return;
+						}
+						else
+							return;
+					}
+				}
+				else
+					return;
 			}
 			else
-			{
-				i = i - line_length;
-				return;
-			}
+				return;	
 		}
 		else
-		{
-			i++;
-			return; 
-		}
+			return;
+		update_best(counter, i);
+		counter++;
 	}
-	
+	return;
+}
+
+void	update_best(int counter, int i)
+{
+	if (!g_current_best || counter + 1 > g_current_best)
+	{
+		g_current_best = counter + 1;
+		g_solution_location = i;
+		ft_putstr("{ location: ");
+		ft_putnbr(i);
+		ft_putstr(" | score: ");
+		ft_putnbr(g_current_best);
+		ft_putstr(" }");
+		ft_putchar('\n');
+	}
 	return;
 }

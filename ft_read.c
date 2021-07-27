@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:51:16 by amann             #+#    #+#             */
-/*   Updated: 2021/07/26 16:47:21 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 07:39:31 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ char	*ft_read(char *filename)
 	if (!(str = malloc(sizeof(char*))))
 		return (0);
 	size = sizeof(char*);
-	//error handling for malloc needed
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{

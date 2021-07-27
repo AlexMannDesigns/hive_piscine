@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsq_header.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:28:30 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 08:12:14 by ssulkuma         ###   ########.fr       */
+/*   Updated: 2021/07/27 08:35:22 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,12 @@ char	*ft_realloc(char *str, int size);
 char	*ft_malloc_exact(char *str, int len);
 void	ft_solve(char *str);
 int		ft_strlen(char *str);
-void	checksquare(char *str, int i, int line_length);
+void	checksquare(char *str, int i, int line_length, char empty);
 void	ft_putnbr(int nb);
 int		print_error(void);
 int		check_valid_map(char *map, int line_length, int line_height);
+void	update_best(int counter, int i);
+
+int		g_current_best;
+int		g_solution_location;
 #endif

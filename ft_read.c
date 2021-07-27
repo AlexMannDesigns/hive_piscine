@@ -6,31 +6,18 @@
 /*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:51:16 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 16:29:07 by ssulkuma         ###   ########.fr       */
+/*   Updated: 2021/07/27 19:48:45 by ssulkuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq_header.h"
 
-char	*ft_read(char *filename)
+char	*read_open(char *str, int fd, int size)
 {
-	char	*str;
 	char	c;
-	int		fd;
-	int		i;
-	int		size;
-	int		len;
 	int		read_fd;
+	int		i;
 
-	if (!(str = malloc(sizeof(char*))))
-		return (0);
-	size = sizeof(char*);
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
-	{
-		ft_putstr("Open failed\n");
-		return (0);
-	}
 	i = 0;
 	while ((read_fd = read(fd, &c, 1)))
 	{
@@ -48,6 +35,26 @@ char	*ft_read(char *filename)
 		return (0);
 	}
 	str[i] = '\0';
+	return (str);
+}
+
+char	*ft_read(char *filename)
+{
+	char	*str;
+	int		fd;
+	int		size;
+	int		len;
+
+	if (!(str = malloc(sizeof(char*))))
+		return (0);
+	size = sizeof(char*);
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+	{
+		ft_putstr("Open failed\n");
+		return (0);
+	}
+	str = read_open(str, fd, size);
 	len = ft_strlen(str);
 	if (len == 0)
 	{

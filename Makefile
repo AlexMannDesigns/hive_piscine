@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amann <amann@student.42.fr>                +#+  +:+       +#+         #
+#    By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 08:27:54 by amann             #+#    #+#              #
-#    Updated: 2021/07/27 09:01:40 by amann            ###   ########.fr        #
+#    Updated: 2021/07/27 10:24:37 by ssulkuma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bsq
 FLAGS = -Wall -Wextra -Werror
-C_FILES = main.c functions.c ft_solve.c ft_realloc.c ft_read.c ft_malloc_exact.c ft_key.c ft_atoi.c
+C_FILES = main.c functions.c ft_solve.c ft_realloc.c ft_read.c ft_malloc_exact.c ft_key.c ft_atoi.c error_handling.c
 
 .PHONY = all clean fclean re
 

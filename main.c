@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:27:23 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 09:59:49 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 10:36:31 by ssulkuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,13 @@ int		main(int argc, char **argv)
 	{
 		str = ft_read(argv[i]);
 		ft_key(str);
-		ft_solve(str);
-		str[g_solution_location] = 'x';
-		ft_putstr(str);
-		ft_putchar('\n');
+		if (check_valid_map(str))
+		{
+			ft_solve(str);
+			str[g_solution_location] = g_full;
+			ft_putstr(str);
+			ft_putchar('\n');
+		}
 		i++;
 	}
 	//error handling - valid pattern

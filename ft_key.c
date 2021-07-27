@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_key.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 08:53:00 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 09:59:30 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 11:05:54 by ssulkuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_key(char *str)
 		i++;
 	}
 	g_full = str[i - 1];
+	g_obstacle = str[i - 2];
 	g_empty = str[i - 3];
 	i++;
 	g_line_length = 0;

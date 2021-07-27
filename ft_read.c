@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_read.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:51:16 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 07:39:31 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 11:19:25 by ssulkuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq_header.h"
-
-#define BUF_SIZE 32000
 
 char	*ft_read(char *filename)
 {
@@ -22,6 +20,7 @@ char	*ft_read(char *filename)
 	int		i;
 	int		size;
 	int		len;
+	int		read_fd;
 	
 	if (!(str = malloc(sizeof(char*))))
 		return (0);
@@ -33,7 +32,7 @@ char	*ft_read(char *filename)
 		return 0;
 	}
 	i = 0;
-	while (read(fd, &c, 1)) 
+	while ((read_fd = read(fd, &c, 1)))
 	{	
 		str[i] = c;
 		i++;
@@ -42,6 +41,11 @@ char	*ft_read(char *filename)
 			size *= 2;
 			str = ft_realloc(str, size);
 		}
+	}
+	if (read_fd == -1)
+	{
+		ft_putstr("Read failed\n");
+		return 0;
 	}
 	str[i] = '\0';
 	len = ft_strlen(str);

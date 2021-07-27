@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 09:30:18 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 10:02:45 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 13:19:18 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,12 +84,6 @@ void	update_best(int counter, int i)
 	{
 		g_current_best = counter + 1;
 		g_solution_location = i;
-		ft_putstr("{ location: ");
-		ft_putnbr(i);
-		ft_putstr(" | score: ");
-		ft_putnbr(g_current_best);
-		ft_putstr(" }");
-		ft_putchar('\n');
 	}
 	return;
 }

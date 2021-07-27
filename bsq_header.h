@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsq_header.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:28:30 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 11:06:19 by ssulkuma         ###   ########.fr       */
+/*   Updated: 2021/07/27 13:06:56 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		check_valid_map(char *map);
 void	update_best(int counter, int i);
 int		ft_atoi(char *str);
 void	ft_key(char *str);
+void	ft_print_solution(char *str);
 
 int		g_current_best;
 int		g_solution_location;

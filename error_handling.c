@@ -6,7 +6,7 @@
 /*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 07:30:34 by ssulkuma          #+#    #+#             */
-/*   Updated: 2021/07/27 11:13:04 by ssulkuma         ###   ########.fr       */
+/*   Updated: 2021/07/27 13:19:32 by ssulkuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		print_error(void)
 {
-	write(2, "Error.\n", 7);
+	write(2, "map error\n", 10);
 	return (1);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsq_header.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:28:30 by amann             #+#    #+#             */
-/*   Updated: 2021/07/26 17:46:46 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 08:12:14 by ssulkuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,6 @@ void	ft_solve(char *str);
 int		ft_strlen(char *str);
 void	checksquare(char *str, int i, int line_length);
 void	ft_putnbr(int nb);
+int		print_error(void);
+int		check_valid_map(char *map, int line_length, int line_height);
 #endif

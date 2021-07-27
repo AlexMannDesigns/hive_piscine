@@ -6,11 +6,29 @@
 /*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 12:57:25 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 17:01:07 by ssulkuma         ###   ########.fr       */
+/*   Updated: 2021/07/27 17:31:40 by ssulkuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq_header.h"
+
+int		print_two(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\n')
+	{
+		i++;
+	}
+	i++;
+	while (str[i] != '\0')
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
+	return (0);
+}
 
 void	ft_print_solution(char *str)
 {
@@ -33,20 +51,5 @@ void	ft_print_solution(char *str)
 		}
 		i++;
 	}
-
-}
-
-int		print_two()
-{
-	i = 0;
-	while (str[i] != '\n')
-	{
-		i++;
-	}
-	i++;
-	while (str[i] != '\0')
-	{
-		ft_putchar(str[i]);
-		i++;
-	}
+	print_two(str);
 }

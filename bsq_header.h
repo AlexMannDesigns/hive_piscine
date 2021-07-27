@@ -6,7 +6,7 @@
 /*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:28:30 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 16:21:56 by ssulkuma         ###   ########.fr       */
+/*   Updated: 2021/07/27 17:32:28 by ssulkuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	update_best(int counter, int i);
 int		ft_atoi(char *str);
 void	ft_key(char *str);
 void	ft_print_solution(char *str);
+void	one_line(char *str, int i);
 
 int		g_current_best;
 int		g_solution_location;

@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:28:30 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 17:42:31 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 19:17:27 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_realloc(char *str, int size);
 char	*ft_malloc_exact(char *str, int len);
 void	ft_solve(char *str);
 int		ft_strlen(char *str);
-void	checksquare(char *str, int i);
+void	checksquare(char *str, int i, int c, int j);
 void	ft_putnbr(int nb);
 int		print_error(void);
 int		check_valid_map(char *map);

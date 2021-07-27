@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 09:30:18 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 08:30:21 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 10:02:45 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,7 @@
 
 void	ft_solve(char *str)
 {
-	char	lines;
-	char	empty;
-	char	obstacle;
-	char	full;
 	int		i;
-	int		line_length;
-	
-	lines = str[0]; //convert to integer ATOI - check for 2+ digit numbers
-	empty = str[1];
-	obstacle = str[2];
-	full = str[3];
 
 	g_current_best = 0;
 	
@@ -34,44 +24,36 @@ void	ft_solve(char *str)
 		i++;
 	}
 	i++;
-	line_length = 0;
-	while (str[i] != '\n')
-	{
-		line_length++;
-		i++;
-	}
-	line_length++;
-	i = i - line_length;
 	while (str[i] != '\0')
 	{
-		if (str[i] == empty)
+		if (str[i] == g_empty)
 		{
-			checksquare(str, i, line_length, empty);
+			checksquare(str, i);
 		}
 		i++;
 	}
 }
 
-void	checksquare(char *str, int i, int line_length, char empty)
+void	checksquare(char *str, int i)
 {
 	int counter;
 	int j;
 	
 	counter = 1;
-	while (counter < 9)
+	while (counter < g_lines)
 	{
-		if ((str[i + counter]) == empty)
+		if ((str[i + counter]) == g_empty)
 		{
-			if ((str[i + (line_length * counter)]) == empty)
+			if ((str[i + (g_line_length * counter)]) == g_empty)
 			{
-				if ((str[i + (line_length * counter) + counter]) == empty)
+				if ((str[i + (g_line_length * counter) + counter]) == g_empty)
 				{
 					j = counter - 1;
 					while (j > 0)	
 					{
-						if ((str[i + (line_length * j) + counter]) == empty)
+						if ((str[i + (g_line_length * j) + counter]) == g_empty)
 						{
-							if ((str[i + (line_length * counter) + j]) == empty)
+							if ((str[i + (g_line_length * counter) + j]) == g_empty)
 							{
 								j--;
 							}

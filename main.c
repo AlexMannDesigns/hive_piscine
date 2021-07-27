@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:27:23 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 08:27:35 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/27 09:59:49 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		main(int argc, char **argv)
 	while (i < argc)
 	{
 		str = ft_read(argv[i]);
+		ft_key(str);
 		ft_solve(str);
 		str[g_solution_location] = 'x';
 		ft_putstr(str);

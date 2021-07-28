@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_handling.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 07:30:34 by ssulkuma          #+#    #+#             */
-/*   Updated: 2021/07/28 10:53:37 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/28 15:14:09 by ssulkuma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,11 @@ int		check_valid_map(char *map)
 	}
 	i++;
 	if (map[i] == '\n')
+	{
+		print_error();
+		return (0);
+	}
+	if (g_full == g_empty || g_full == g_obstacle || g_empty == g_obstacle)
 	{
 		print_error();
 		return (0);

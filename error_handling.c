@@ -6,7 +6,11 @@
 /*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 07:30:34 by ssulkuma          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2021/07/28 10:48:39 by ssulkuma         ###   ########.fr       */
+=======
+/*   Updated: 2021/07/28 09:02:55 by amann            ###   ########.fr       */
+>>>>>>> c7d58f847c9cfe03e70ac74482881c20c518212d
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +52,7 @@ int		check_valid_length(char *map, int i)
 		counter = 0;
 		while (map[i] != '\n')
 		{
-			if (map[i] != g_empty && map[i] != g_obstacle)
+			if ((map[i] != g_empty && map[i] != g_obstacle) || map[i] == '\0')
 			{
 				print_error();
 				return (0);

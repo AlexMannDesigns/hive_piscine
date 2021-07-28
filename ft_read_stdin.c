@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read.c                                          :+:      :+:    :+:   */
+/*   ft_read_stdin.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/26 08:51:16 by amann             #+#    #+#             */
-/*   Updated: 2021/07/28 08:42:32 by amann            ###   ########.fr       */
+/*   Created: 2021/07/28 07:33:44 by amann             #+#    #+#             */
+/*   Updated: 2021/07/28 07:39:43 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq_header.h"
 
-char	*read_open(char *str, int fd, int size)
+char	*read_open_stdin(char *str, int fd, int size)
 {
 	char	c;
 	int		read_fd;
@@ -21,11 +21,6 @@ char	*read_open(char *str, int fd, int size)
 	i = 0;
 	while ((read_fd = read(fd, &c, 1)))
 	{
-		if (read_fd == -1)
-		{
-			write(2, "Read failed\n", 12);
-			exit(read_fd);
-		}
 		str[i] = c;
 		i++;
 		if (i >= size)
@@ -34,28 +29,25 @@ char	*read_open(char *str, int fd, int size)
 			str = ft_realloc(str, size);
 		}
 	}
+	if (read_fd == -1)
+	{
+		ft_putstr("Read failed\n");
+		return (0);
+	}
 	str[i] = '\0';
 	return (str);
 }
 
-char	*ft_read(char *filename)
+char	*ft_read_stdin(void)
 {
 	char	*str;
-	int		fd;
 	int		size;
 	int		len;
 
 	if (!(str = malloc(sizeof(char*))))
 		return (0);
 	size = sizeof(char*);
-	fd = open(filename, O_RDONLY);
-	if (fd == -1)
-	{
-		write(2, "Open failed\n", 12);
-		exit(fd);
-	}
-	str = read_open(str, fd, size);
-	close(fd);
+	str = read_open_stdin(str, 0, size);
 	len = ft_strlen(str);
 	if (len == 0)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_key.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 08:53:00 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 16:23:13 by ssulkuma         ###   ########.fr       */
+/*   Updated: 2021/07/28 09:09:34 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,10 @@ void	ft_key(char *str)
 	g_line_length = 0;
 	while (str[i] != '\n')
 	{
+		if (str[i] == '\0')
+		{
+			return ;
+		}
 		g_line_length++;
 		i++;
 	}

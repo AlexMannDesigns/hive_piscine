@@ -39,15 +39,15 @@ empty = '.';
 
 TO DO
 read from stdin - done
-makefile
+makefile - done
 one line map algorithms - done
-use close
-use exit
+use close - done
+use exit - done
 
 ERROR HANDLING
 empty files - done
-directories -
-no existent files
+directories - done
+no existent files - done
 empty character is numerical - done
 
 

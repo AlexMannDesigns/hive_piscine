@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_read.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ssulkuma <ssulkuma@student.42.fr>          +#+  +:+       +#+        */
+/*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:51:16 by amann             #+#    #+#             */
-/*   Updated: 2021/07/27 19:48:45 by ssulkuma         ###   ########.fr       */
+/*   Updated: 2021/07/28 08:42:32 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ char	*read_open(char *str, int fd, int size)
 	i = 0;
 	while ((read_fd = read(fd, &c, 1)))
 	{
+		if (read_fd == -1)
+		{
+			write(2, "Read failed\n", 12);
+			exit(read_fd);
+		}
 		str[i] = c;
 		i++;
 		if (i >= size)
@@ -28,11 +33,6 @@ char	*read_open(char *str, int fd, int size)
 			size *= 2;
 			str = ft_realloc(str, size);
 		}
-	}
-	if (read_fd == -1)
-	{
-		ft_putstr("Read failed\n");
-		return (0);
 	}
 	str[i] = '\0';
 	return (str);
@@ -51,10 +51,11 @@ char	*ft_read(char *filename)
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
-		ft_putstr("Open failed\n");
-		return (0);
+		write(2, "Open failed\n", 12);
+		exit(fd);
 	}
 	str = read_open(str, fd, size);
+	close(fd);
 	len = ft_strlen(str);
 	if (len == 0)
 	{

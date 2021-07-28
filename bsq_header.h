@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:28:30 by amann             #+#    #+#             */
-/*   Updated: 2021/07/28 08:13:17 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/28 08:33:11 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+# include <errno.h>
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);

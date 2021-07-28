@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/27 07:30:34 by ssulkuma          #+#    #+#             */
-/*   Updated: 2021/07/27 19:55:34 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/28 09:02:55 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		check_valid_length(char *map, int i)
 		counter = 0;
 		while (map[i] != '\n')
 		{
-			if (map[i] != g_empty && map[i] != g_obstacle)
+			if ((map[i] != g_empty && map[i] != g_obstacle) || map[i] == '\0')
 			{
 				print_error();
 				return (0);

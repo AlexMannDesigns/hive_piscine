@@ -6,7 +6,7 @@
 #    By: amann <amann@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 08:27:54 by amann             #+#    #+#              #
-#    Updated: 2021/07/28 13:40:34 by amann            ###   ########.fr        #
+#    Updated: 2021/07/28 19:21:17 by amann            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ C_FILES = $(SRCDIR)main.c \
 		$(SRCDIR)ft_process_map.c\
 		$(SRCDIR)ft_read_stdin.c \
 
-OBJ = 	main.o \
+OBJ =	main.o \
 		functions.o \
 		ft_solve.o \
 		ft_realloc.o \

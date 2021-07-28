@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:27:23 by amann             #+#    #+#             */
-/*   Updated: 2021/07/28 17:53:11 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/28 19:38:49 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int		main(int argc, char **argv)
 	int		i;
 	char	*str;
 
-	g_solution_location = 0;
 	if (argc < 2)
 	{
 		str = ft_read_stdin();

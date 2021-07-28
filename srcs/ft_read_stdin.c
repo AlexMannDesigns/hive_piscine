@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 07:33:44 by amann             #+#    #+#             */
-/*   Updated: 2021/07/28 07:39:43 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/28 19:50:30 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*read_open_stdin(char *str, int fd, int size)
 	}
 	if (read_fd == -1)
 	{
-		ft_putstr("Read failed\n");
+		write(2, "Read failed\n", 12);
 		return (0);
 	}
 	str[i] = '\0';

@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 09:30:18 by amann             #+#    #+#             */
-/*   Updated: 2021/07/28 12:28:52 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/28 18:36:42 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_solve(char *str)
 		i++;
 	}
 	i++;
-	if (g_lines == 1 || g_lines <= g_line_length)
+	if (g_lines == 1 || g_lines <= g_line_length || g_line_length <= 2)
 		one_line(str, i);
 	while (str[i] != '\0')
 	{

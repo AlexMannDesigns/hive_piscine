@@ -6,11 +6,18 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:51:16 by amann             #+#    #+#             */
-/*   Updated: 2021/07/28 08:42:32 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/28 12:03:23 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq_header.h"
+
+int		check_errno(void)
+{
+	if (errno == 0)
+		return (1);
+	return (0);
+}
 
 char	*read_open(char *str, int fd, int size)
 {
@@ -24,7 +31,7 @@ char	*read_open(char *str, int fd, int size)
 		if (read_fd == -1)
 		{
 			write(2, "Read failed\n", 12);
-			exit(read_fd);
+			return ("");
 		}
 		str[i] = c;
 		i++;
@@ -34,6 +41,7 @@ char	*read_open(char *str, int fd, int size)
 			str = ft_realloc(str, size);
 		}
 	}
+	close(fd);
 	str[i] = '\0';
 	return (str);
 }
@@ -52,10 +60,11 @@ char	*ft_read(char *filename)
 	if (fd == -1)
 	{
 		write(2, "Open failed\n", 12);
-		exit(fd);
+		return ("");
 	}
 	str = read_open(str, fd, size);
-	close(fd);
+	if (!check_errno())
+		return (0);
 	len = ft_strlen(str);
 	if (len == 0)
 	{

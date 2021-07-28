@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:27:23 by amann             #+#    #+#             */
-/*   Updated: 2021/07/28 08:27:04 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/28 11:55:03 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		main(int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
+		errno = 0;
 		str = ft_read(argv[i]);
 		ft_process_map(str);
 		if (i != (argc - 1))

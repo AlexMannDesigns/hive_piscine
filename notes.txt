@@ -38,9 +38,11 @@ empty = '.';
 "9.ox\n.....o....\n....etc"
 
 TO DO
-read from stdin
+read from stdin - done
 makefile
-one line map algorithms
+one line map algorithms - done
+use close
+use exit
 
 ERROR HANDLING
 empty files - done
@@ -61,6 +63,5 @@ while (counter < number of lines)
 		j--
 	(counter + 1 > current_best) -> current_best = count+1, solution_location = i
 	counter++
-
 
 9.ox\n...........................\n....o......................\n............o..............\n...........................\n....o......................\n...............o...........\n...........................\n......o..............o.....\n..o.......o................\n

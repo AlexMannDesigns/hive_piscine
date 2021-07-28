@@ -6,27 +6,52 @@
 #    By: amann <amann@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 08:27:54 by amann             #+#    #+#              #
-#    Updated: 2021/07/28 08:23:06 by amann            ###   ########.fr        #
+#    Updated: 2021/07/28 13:40:34 by amann            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bsq
+SRCDIR = srcs/
+HEADDIR = includes
 FLAGS = -Wall -Wextra -Werror
-C_FILES = main.c functions.c ft_solve.c ft_realloc.c ft_read.c ft_malloc_exact.c\
-	ft_key.c ft_atoi.c error_handling.c ft_print_solution.c ft_process_map.c\
-	ft_read_stdin.c
+C_FILES = $(SRCDIR)main.c \
+		$(SRCDIR)functions.c \
+		$(SRCDIR)ft_solve.c \
+		$(SRCDIR)ft_realloc.c \
+		$(SRCDIR)ft_read.c \
+		$(SRCDIR)ft_malloc_exact.c \
+		$(SRCDIR)ft_key.c \
+		$(SRCDIR)ft_atoi.c \
+		$(SRCDIR)error_handling.c \
+		$(SRCDIR)ft_print_solution.c \
+		$(SRCDIR)ft_process_map.c\
+		$(SRCDIR)ft_read_stdin.c \
+
+OBJ = 	main.o \
+		functions.o \
+		ft_solve.o \
+		ft_realloc.o \
+		ft_read.o \
+		ft_malloc_exact.o \
+		ft_key.o \
+		ft_atoi.o \
+		error_handling.o \
+		ft_print_solution.o \
+		ft_process_map.o \
+		ft_read_stdin.o \
 
 .PHONY = all clean fclean re
 
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) $(C_FILES) -o $(NAME)
+	gcc -c -I$(HEADDIR) $(C_FILES)
+	gcc $(FLAGS) $(OBJ) -o $(NAME) 
 
 clean:
-	rm -f *~
+	rm -f $(OBJ)
 
-fclean:
+fclean: clean
 	rm -f $(NAME)
 
 re: fclean all

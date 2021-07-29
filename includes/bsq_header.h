@@ -6,7 +6,7 @@
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 08:28:30 by amann             #+#    #+#             */
-/*   Updated: 2021/07/28 12:03:41 by amann            ###   ########.fr       */
+/*   Updated: 2021/07/29 07:07:00 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	one_line(char *str, int i);
 char	*ft_read_stdin(void);
 void	ft_process_map(char *str);
 int		check_errno(void);
+int		string_checker(char *str);
 
 int		g_current_best;
 int		g_solution_location;

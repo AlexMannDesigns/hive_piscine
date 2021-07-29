@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_process_map.c                                   :+:      :+:    :+:   */
+/*   string_checker.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amann <amann@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/28 08:11:17 by amann             #+#    #+#             */
-/*   Updated: 2021/07/29 07:27:27 by amann            ###   ########.fr       */
+/*   Created: 2021/07/29 07:05:33 by amann             #+#    #+#             */
+/*   Updated: 2021/07/29 07:30:09 by amann            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq_header.h"
 
-void	ft_process_map(char *str)
+int		string_checker(char *str)
 {
-	if (check_errno() && string_checker(str))
+	int i;
+
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i] != '\n')
 	{
-		ft_key(str);
-		if (check_valid_map(str))
+		if (str[i] == '\0')
 		{
-			ft_solve(str);
-			ft_print_solution(str);
+			print_error();
+			return (0);
 		}
+		i++;
 	}
+	return (1);
 }

@@ -6,7 +6,7 @@
 #    By: amann <amann@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/26 08:27:54 by amann             #+#    #+#              #
-#    Updated: 2021/07/28 19:21:17 by amann            ###   ########.fr        #
+#    Updated: 2021/07/29 07:09:53 by amann            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ C_FILES = $(SRCDIR)main.c \
 		$(SRCDIR)ft_print_solution.c \
 		$(SRCDIR)ft_process_map.c\
 		$(SRCDIR)ft_read_stdin.c \
+		$(SRCDIR)string_checker.c \
 
 OBJ =	main.o \
 		functions.o \
@@ -39,6 +40,7 @@ OBJ =	main.o \
 		ft_print_solution.o \
 		ft_process_map.o \
 		ft_read_stdin.o \
+		string_checker.o
 
 .PHONY = all clean fclean re
 
